@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Book do
-  describe "#description" do
+  describe "#description" do    
     it "should returns long description" do
       book = Book.new(title: "Awesome", author: "Me")
       book.description.should eq "Awesome by Me"
