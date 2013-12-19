@@ -4,6 +4,8 @@ class Book < ActiveRecord::Base
   validates :isbn, presence: true
   validates :price, presence: true
   
+  belongs_to :admin
+  
   def description
     "#{title} by #{author}"
   end

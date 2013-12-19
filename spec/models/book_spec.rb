@@ -1,6 +1,21 @@
 require 'spec_helper'
 
 describe Book do
+  describe "#admin" do
+    it "should returns particular admin record" do
+      admin = FactoryGirl.create(:admin)
+      book = FactoryGirl.create(:book, admin: admin)
+      
+      book.admin.should eq admin
+    end
+    
+    it "should returns admin record" do
+      book = FactoryGirl.create(:book)
+      
+      book.admin.should_not eq nil
+    end
+  end
+  
   describe "#description" do    
     it "should returns long description" do
       book = Book.new(title: "Awesome", author: "Me")
