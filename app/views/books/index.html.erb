@@ -21,7 +21,7 @@
         <td><%= book.author %></td>
         <td><%= book.isbn %></td>
         <td><%= book.price %></td>
-        <td><%= book.admin.sign_in_count unless book.admin.nil? %></td>        
+        <td><%= book.admin.email unless book.admin.nil? %></td>
         <td><%= link_to 'Show', book %></td>
         <td><%= link_to 'Edit', edit_book_path(book) %></td>
         <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
