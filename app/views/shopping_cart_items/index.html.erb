@@ -1,0 +1,31 @@
+<h1>Listing shopping_cart_items</h1>
+
+<p>Total Amount: <%= @total_amount %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Book</th>
+      <th>Quantity</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @shopping_cart_items.each do |shopping_cart_item| %>
+      <tr>
+        <td><%= shopping_cart_item.book_id %></td>
+        <td><%= shopping_cart_item.quantity %></td>
+        <td><%= link_to 'Show', shopping_cart_item %></td>
+        <td><%= link_to 'Edit', edit_shopping_cart_item_path(shopping_cart_item) %></td>
+        <td><%= link_to 'Destroy', shopping_cart_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Shopping cart item', new_shopping_cart_item_path %>

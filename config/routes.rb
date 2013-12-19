@@ -1,4 +1,6 @@
 Bookazon::Application.routes.draw do
+  resources :shopping_cart_items
+
   devise_for :admins
   devise_for :users
   
