@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
   layout 'landing'
   
-  def index
+  def index    
     @books = Book.all
   end
 end

@@ -1,10 +1,9 @@
 Bookazon::Application.routes.draw do
-  resources :shopping_cart_items
-
   devise_for :admins
   devise_for :users
-  
+
   resources :books
+  resources :shopping_cart_items 
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

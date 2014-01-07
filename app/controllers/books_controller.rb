@@ -25,7 +25,7 @@ class BooksController < ApplicationController
 
   # POST /books
   # POST /books.json
-  def create
+  def create    
     @book = Book.new(book_params)
     @book.admin_id = current_admin.id
 
