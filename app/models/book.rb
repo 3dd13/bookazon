@@ -6,6 +6,8 @@ class Book < ActiveRecord::Base
   
   belongs_to :admin
   
+  has_many :comments
+  
   def description
     "#{title} by #{author}"
   end
