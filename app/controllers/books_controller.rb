@@ -60,7 +60,7 @@ class BooksController < ApplicationController
     @book.destroy
     respond_to do |format|
       format.html { redirect_to books_url }
-      format.json { head :no_content }
+      format.json { render json: {success: 'ok'} }
     end
   end
 
