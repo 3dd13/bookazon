@@ -6,7 +6,7 @@ class Book < ActiveRecord::Base
   
   belongs_to :admin
   
-  has_many :comments
+  has_many :comments, dependent: :destroy
   
   def description
     "#{title} by #{author}"
