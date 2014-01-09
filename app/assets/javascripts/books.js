@@ -1,3 +1,4 @@
+// dom ready shortcut
 $(function() {
   $('.btn-delete-book').click(function() {
     if (!confirm("Are you sure")) {
