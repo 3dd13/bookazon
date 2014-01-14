@@ -12,6 +12,8 @@ class BooksController < ApplicationController
   # GET /books/1
   # GET /books/1.json
   def show
+    @comments = @book.comments
+    @comment = Comment.new
   end
 
   # GET /books/new
@@ -60,7 +62,7 @@ class BooksController < ApplicationController
     @book.destroy
     respond_to do |format|
       format.html { redirect_to books_url }
-      format.json { head :no_content }
+      format.json { render json: {success: 'ok'} }
     end
   end
 

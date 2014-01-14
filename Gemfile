@@ -11,6 +11,12 @@ end
 group :production do
   gem 'pg'
 end
+group :development, :staging do
+  # for better troubleshooting
+  # gem 'better_errors'
+  # gem 'binding_of_caller'
+  gem 'meta_request'
+end
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
