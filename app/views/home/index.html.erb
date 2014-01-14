@@ -3,39 +3,55 @@
     <p class="pull-right visible-xs">
       <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
     </p>
+    
     <div class="jumbotron">
-      <h1>Hello, world!</h1>
-      <p>This is an example to show the potential of an offcanvas layout pattern in Bootstrap. Try some responsive-range viewport sizes to see it in action.</p>
+      <h1>New Books</h1>
+      <div class="row">
+        <% @new_books.each do |book| %>
+        <div class="col-6 col-sm-6 col-lg-4 text-center">
+          <h3><%= book.title %></h3>
+          <img src="http://placehold.it/150x150"> 
+          <p><%= book.author %></p>
+          <p><%= book.price %></p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div>
+      
+        <% end %>
+      
+      </div>
     </div>
+
+    <h1>Order by Author</h1>    
+    
     <div class="row">
-      <% @books.each do |book| %>
+      <% @books_ordered_by_author.each do |book| %>
       <div class="col-6 col-sm-6 col-lg-4 text-center">
-        <h2><%= book.title %></h2>
+        <h3><%= book.title %></h3>
         <img src="http://placehold.it/150x150"> 
         <p><%= book.author %></p>
         <p><%= book.price %></p>
         <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-      </div><!--/span-->
+      </div>
       
       <% end %>
       
-    </div><!--/row-->
+    </div>    
   </div><!--/span-->
 
   <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
     <div class="list-group">
-      <a href="#" class="list-group-item active">Link</a>
-      <a href="#" class="list-group-item">Link</a>
-      <a href="#" class="list-group-item">Link</a>
-      <a href="#" class="list-group-item">Link</a>
-      <a href="#" class="list-group-item">Link</a>
-      <a href="#" class="list-group-item">Link</a>
-      <a href="#" class="list-group-item">Link</a>
-      <a href="#" class="list-group-item">Link</a>
-      <a href="#" class="list-group-item">Link</a>
-      <a href="#" class="list-group-item">Link</a>
+      <% @authors.each do |author| %>
+        <a href='<%="/authors/#{author}"%>' class="list-group-item"><%= author %></a>
+      <% end %>
     </div>
   </div><!--/span-->
 </div><!--/row-->
 
 <hr>
+
+
+
+
+
+
+

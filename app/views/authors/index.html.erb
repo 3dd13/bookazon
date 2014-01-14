@@ -1,0 +1,15 @@
+<h1>Authors <%= params[:author_name] %></h1>
+
+<div class="row">
+  <% @books.each do |book| %>
+  <div class="col-6 col-sm-6 col-lg-4 text-center">
+    <h3><%= book.title %></h3>
+    <img src="http://placehold.it/150x150"> 
+    <p><%= book.author %></p>
+    <p><%= book.price %></p>
+    <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+  </div>
+
+  <% end %>
+
+</div>

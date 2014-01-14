@@ -2,10 +2,12 @@ Bookazon::Application.routes.draw do
   resources :comments
 
   devise_for :admins
-  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }  
 
   resources :books
-  resources :shopping_cart_items 
+  resources :shopping_cart_items
+  
+  get "authors/:author_name" => "authors#index"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
