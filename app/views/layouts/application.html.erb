@@ -16,11 +16,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Project name</a>
+          <%= link_to "Home", root_path, class: "navbar-brand" %>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#contact"><%= I18n.t("contact") %></a></li>
             
             <% if current_admin %>
             <li><%= link_to "Admin Sign Out", destroy_admin_session_path, method: :delete %></li>

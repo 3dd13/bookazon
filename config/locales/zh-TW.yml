@@ -19,15 +19,12 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
-  hello: "Hello world"
-  contact: "Contact"
+zh-TW:
+  hello: "您好"
   
   label:
-    save: "Save"
-    edit: "Edit"
-
-
+    save: "儲"
+    edit: "更"  
 
 
 

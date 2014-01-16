@@ -7,7 +7,7 @@ Bookazon::Application.routes.draw do
   resources :books
   resources :shopping_cart_items
   
-  get "authors/:author_name" => "authors#index"
+  get "authors/:author_name" => "authors#index", as: :author_profile
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
