@@ -1,0 +1,37 @@
+<h1>Admin Dashboard</h1>
+
+<div>No. of Users: <%= @number_of_users %></div>
+<div>No. of Books: <%= @number_of_books %></div>
+
+<canvas id="myChart" width="400" height="400"></canvas>
+
+<% content_for(:inline_javascript) do %>
+  <script>
+      var data = {
+      	labels : <%= raw @chart_labels %>,
+      	datasets : [
+      		{
+      			fillColor : "rgba(220,220,220,0.5)",
+      			strokeColor : "rgba(220,220,220,1)",
+      			pointColor : "rgba(220,220,220,1)",
+      			pointStrokeColor : "#fff",
+      			data : <%= @line1_data %>
+      		},
+      		{
+      			fillColor : "rgba(151,187,205,0.5)",
+      			strokeColor : "rgba(151,187,205,1)",
+      			pointColor : "rgba(151,187,205,1)",
+      			pointStrokeColor : "#fff",
+      			data : <%= @line2_data %>
+      		}
+      	]
+      }
+
+      var ctx = document.getElementById("myChart").getContext("2d");
+      var myNewChart = new Chart(ctx).Line(data, {});
+  </script>
+<% end %>
+
+
+
+
